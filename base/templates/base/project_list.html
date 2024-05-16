@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project List</title>
+    <style>
+        .image-frame {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .image-frame img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Projects</h1>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <h2><a href="{% url 'project_detail' project.pk %}">{{ project.title }}</a></h2>
+                <p><strong>Description:</strong> {{ project.description }}</p>
+                <p><strong>Location:</strong> {{ project.location }}</p>
+                <p><strong>Budget:</strong> ${{ project.budget }}</p>
+                <p><strong>Start Date:</strong> {{ project.start_date }}</p>
+                <p><strong>End Date:</strong> {{ project.end_date }}</p>
+                <p><strong>Status:</strong> {{ project.get_status_display }}</p>
+                <div class="image-frame">
+                    {% for image in project.images.all %}
+                        <img src="{{ image.image.url }}" alt="{{ project.title }}">
+                    {% endfor %}
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

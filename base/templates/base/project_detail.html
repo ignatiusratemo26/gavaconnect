@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ project.title }}</title>
+</head>
+<body>
+    <h1>{{ project.title }}</h1>
+    <p>{{ project.description }}</p>
+    <p>Status: {{ project.get_status_display }}</p>
+    <h2>Comments</h2>
+    <ul>
+        {% for comment in project.comments.all %}
+            <li>{{ comment.author }}: {{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Progress Updates</h2>
+    <ul>
+        {% for update in project.progress_updates.all %}
+            <li>{{ update.author }}: {{ update.update_content }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

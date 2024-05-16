@@ -1,10 +1,15 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from .models import User, Project, Comment, ProgressUpdate, BursaryApplication, GovernmentFeedback, Analytics
+from .models import Project, ProjectImage, Comment, ProgressUpdate, BursaryApplication, GovernmentFeedback, Analytics
 
-admin.site.register(User, UserAdmin)
+class ProjectImageInline(admin.TabularInline):
+    model = ProjectImage
+    extra = 1
 
-admin.site.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
+    inlines = [ProjectImageInline]
+
+admin.site.register(Project, ProjectAdmin)
+admin.site.register(ProjectImage)
 admin.site.register(Comment)
 admin.site.register(ProgressUpdate)
 admin.site.register(BursaryApplication)
