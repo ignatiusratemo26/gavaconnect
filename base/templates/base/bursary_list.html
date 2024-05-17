@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Bursary Applications</title>
-</head>
-<body>
+{% extends 'base/base.html' %}
+
+{% block title %} Projects | {% endblock %}
+{% block content %}
+
     <h1>Bursary Applications</h1>
     <ul>
         {% for application in applications %}
             <li>{{ application.applicant_name }} - {{ application.status }}</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

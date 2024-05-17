@@ -1,0 +1,22 @@
+<header>
+    <nav class="fixed top-0 flex items-center justify-between px-4 py-6 bg-sky-600 w-full">
+        <div class="container d-flex justify-content-between">
+                <a class="navbar-brand" href="{% url 'home' %}">GavaConnect</a>
+                <ul class="navbar-nav flex">
+                    <li class="nav-item active">
+                        <a class="nav-link px-4 py-2 rounded text-white bg-gray-900 hover:bg-gray-700" href="{% url 'register' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4 py-2 rounded text-white bg-gray-900 hover:bg-gray-700" href="{% url 'bursary_list' %}">Bursary Application</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-4 py-2 rounded text-white bg-gray-900 hover:bg-gray-700" href="{% url 'user_profile' %}">My Profile</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search here..." aria-label="Search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+    </nav>
+</header>

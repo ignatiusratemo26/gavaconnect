@@ -1,0 +1,84 @@
+/* styles.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.comments {
+    margin-top: 20px;
+    max-height: 200px;  /* Set a maximum height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+.comment {
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.comment p {
+    margin: 0;
+}
+
+form {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
